@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animated Background with Centered Button</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+            font-family: Arial, sans-serif;
+            position: relative;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #ffffc7;
+        }
+
+        .background {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: -1;
+        }
+
+        .symbol {
+            position: absolute;
+            font-size: 3rem;
+            opacity: 0.7;
+            animation: moveSymbol 5s linear infinite;
+        }
+
+        @keyframes moveSymbol {
+            0% {
+                transform: translateY(0) rotate(0deg);
+            }
+            100% {
+                transform: translateY(100vh) rotate(360deg);
+            }
+        }
+
+        .container {
+            position: relative;
+            text-align: center;
+            z-index: 1;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border: none;
+            background-color: #548687;
+            color: white;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="background">
+        <!-- Generate multiple symbols with different positions and delays -->
+        <div class="symbol" style="top: 10%; left: 10%; animation-delay: 0s;">o</div>
+        <div class="symbol" style="top: 20%; left: 30%; animation-delay: 1s;">x</div>
+        <div class="symbol" style="top: 30%; left: 50%; animation-delay: 2s;">o</div>
+        <div class="symbol" style="top: 40%; left: 70%; animation-delay: 3s;">x</div>
+        <div class="symbol" style="top: 50%; left: 90%; animation-delay: 4s;">o</div>
+        <div class="symbol" style="top: 60%; left: 20%; animation-delay: 5s;">x</div>
+        <div class="symbol" style="top: 70%; left: 40%; animation-delay: 6s;">o</div>
+        <div class="symbol" style="top: 80%; left: 60%; animation-delay: 7s;">x</div>
+        <div class="symbol" style="top: 90%; left: 80%; animation-delay: 8s;">o</div>
+    </div>
+
+    <div class="container">
+        <h1>Tic-Tac-Toe</h1>
+        <a href="index.html">
+            <button>START</button>
+        </a>
+    </div>
+</body>
+</html>
